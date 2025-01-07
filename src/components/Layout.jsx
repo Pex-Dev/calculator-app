@@ -68,8 +68,9 @@ export default function Layout() {
                                         onClick={() =>{
                                             handleClickButtonTheme();
                                         }}
+                                        aria-label="Change theme"
                                     >
-                                        <div className={posButtonTheme!=null? theme.buttonTheme : theme.calcColor}></div>
+                                        <span className={posButtonTheme!=null? theme.buttonTheme : theme.calcColor}></span>
                                     </button>
                                 </div>
                             </div>                
@@ -105,10 +106,10 @@ export default function Layout() {
                         </div>
                         <div className="grid grid-cols-2 mt-5 gap-5">
                             <button className={theme.buttonReset} onClick={() => handleButtonClick('reset','reset')}>
-                                <div className={theme.buttonResetBorder}>reset</div>
+                                <span className={theme.buttonResetBorder}>reset</span>
                             </button>
                             <button className={theme.buttonResult} onClick={() => handleButtonResultsClick()} aria-label="Results">
-                                <div className={theme.buttonResultBorder}>=</div>
+                                <span className={theme.buttonResultBorder}>=</span>
                             </button>
                         </div>
                     </div>
