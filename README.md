@@ -61,9 +61,9 @@ Users should be able to:
 
   
 
--  Solution URL: [Add solution URL here](https://your-solution-url.com)
+-  Solution: [Solution](https://www.frontendmentor.io/solutions/calculator-app-solution-cWc-M0JA1f)
 
--  Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-  Live Site: [Calculator app](https://calculator-app-pex-dev.netlify.app/)
 
   
 
