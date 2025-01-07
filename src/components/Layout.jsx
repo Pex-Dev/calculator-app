@@ -5,19 +5,19 @@ const buttons = [
         { value: '7' },
         { value: '8' },
         { value: '9' },
-        { value: 'del', type: 'delete' },
+        { value: 'del', type: 'delete', ariaLabel: 'Delete' },
         { value: '4' },
         { value: '5' },
         { value: '6' },
-        { value: '+', type: 'operator' },
+        { value: '+', type: 'operator', ariaLabel: 'Summation' },
         { value: '1' },
         { value: '2' },
         { value: '3' },
-        { value: '-', type: 'operator' },
-        { value: '.' },
+        { value: '-', type: 'operator', ariaLabel: 'Subtract' },
+        { value: '.', ariaLabel : 'Decimal point' },
         { value: '0' },
-        { value: '/', type: 'operator' },
-        { value: 'x', type: 'operator' },
+        { value: '/', type: 'operator', ariaLabel: 'Divide' },
+        { value: 'x', type: 'operator', ariaLabel: 'Multiply' },
       ];
 
 export default function Layout() {
@@ -95,8 +95,10 @@ export default function Layout() {
                                             handleButtonClick(button.value, button.type)
                                         : button.value==='del'?
                                             handleButtonDelClick()
-                                        : handleButtonClick(button.value)}>
-                                    <div className={button.value=='del'? theme.buttonDelBorder : theme.buttonBorder}>{button.value}</div>
+                                        : handleButtonClick(button.value)}
+                                    aria-label={button.ariaLabel || (isNaN(button.value) ? undefined : button.value)}
+                                >
+                                    <span className={button.value=='del'? theme.buttonDelBorder : theme.buttonBorder}>{button.value}</span>
                                 </button>
                             ))}
                             
@@ -105,7 +107,7 @@ export default function Layout() {
                             <button className={theme.buttonReset} onClick={() => handleButtonClick('reset','reset')}>
                                 <div className={theme.buttonResetBorder}>reset</div>
                             </button>
-                            <button className={theme.buttonResult} onClick={() => handleButtonResultsClick()}>
+                            <button className={theme.buttonResult} onClick={() => handleButtonResultsClick()} aria-label="Results">
                                 <div className={theme.buttonResultBorder}>=</div>
                             </button>
                         </div>
